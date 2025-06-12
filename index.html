@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago Exitoso ✅</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            padding: 50px;
+        }
+        .success-box {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #28a745;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-box">
+        <h1>¡Pago Exitoso! ✅</h1>
+        <p>Tu transacción se completó correctamente.</p>
+        <p>ID de referencia: <strong id="reference-id"></strong></p>
+        <a href="#" class="btn" onclick="goBack()">Volver a la tienda</a>
+    </div>
+
+    <script>
+        // Simula un ID de transacción aleatorio
+        const refId = "REF-" + Math.floor(Math.random() * 1000000);
+        document.getElementById("reference-id").textContent = refId;
+
+        // Opcional: Capturar parámetros de URL (como ?transaction_id=123)
+        const urlParams = new URLSearchParams(window.location.search);
+        const transactionId = urlParams.get('transaction_id');
+        if (transactionId) {
+            document.getElementById("reference-id").textContent = transactionId;
+        }
+
+        // Función para volver atrás (simulando redirección)
+        function goBack() {
+            window.location.href = "https://tu-tienda.com"; // Cambia esto
+        }
+    </script>
+</body>
+</html>
