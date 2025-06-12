@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago Fallido ❌</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            padding: 50px;
+        }
+        .error-box {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #dc3545;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #dc3545;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-box">
+        <h1>¡Pago Fallido! ❌</h1>
+        <p>No se pudo completar tu transacción.</p>
+        <p>Razón: <strong id="error-reason">Problema con el método de pago</strong></p>
+        <a href="#" class="btn" onclick="goBack()">Reintentar pago</a>
+    </div>
+
+    <script>
+        // Opcional: Mostrar motivo de error desde la URL (ej: ?error=tarjeta_rechazada)
+        const urlParams = new URLSearchParams(window.location.search
